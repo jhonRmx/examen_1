@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6 card shadow-sm p-4">
+        <h4 class="text-warning mb-3">Modificar Cita</h4>
+        <form method="POST">
+            <div class="mb-3">
+                <label>Nombre de la Mascota</label>
+                <input type="text" name="mascota" class="form-control" value="{{ cita['mascota'] }}" required>
+            </div>
+            <div class="mb-3">
+                <label>Propietario</label>
+                <input type="text" name="propietario" class="form-control" value="{{ cita['propietario'] }}" required>
+            </div>
+            <div class="mb-3">
+                <label>Especie</label>
+                <input type="text" name="especie" class="form-control" value="{{ cita['especie'] }}">
+            </div>
+            <div class="mb-3">
+                <label>Fecha Actual: <span class="badge bg-secondary">{{ cita['fecha'] }}</span></label>
+                <input type="datetime-local" name="fecha" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-warning w-100">Guardar Cambios</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
